@@ -38,7 +38,8 @@ export const styles = StyleSheet.create({
     marginVertical: 10,
   },
   btnLogin: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
+    color: colors.white,
     alignItems: "center",
     paddingVertical: 10,
     borderRadius: 18,

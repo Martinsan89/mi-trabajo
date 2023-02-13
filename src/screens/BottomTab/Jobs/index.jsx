@@ -2,17 +2,16 @@ import { View, Text, FlatList, SafeAreaView } from "react-native";
 import React from "react";
 import { styles } from "./styles";
 import { CaterogyItem } from "../../../components";
-import { CATEGORIES } from "../../../constants/data"; 
-// import { useSelector, useDispatch } from "react-redux";
-// import { selectedCategory} from '../../store/actions';
+import { useSelector, useDispatch } from "react-redux";
+import { selectCategory} from '../../../store/actions';
 
 
 const Jobs = ({ navigation }) => {
-  // const dispatch = useDispatch();
-  // const categories = useSelector((state) => state.category.categories);
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.category.categories);
 
   const onSelected = (item) => {
-    // dispatch(selectedCategory(item.id))
+    dispatch(selectCategory(item.id))
     navigation.navigate("JobsFiltered", {
       title: item.title,
       categoryId: item.id
@@ -27,7 +26,7 @@ const Jobs = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={CATEGORIES}
+        data={categories}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
         style={styles.containerList}

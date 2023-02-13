@@ -10,19 +10,21 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 25,
   },
+  msg: {
+    fontSize: 15,
+    marginVertical: 15,
+  },
   footer: {
     backgroundColor: colors.white,
     borderTopColor: colors.primary,
     borderTopWidth: 1,
     paddingVertical: 10,
     paddingHorizontal: 10,
+    marginVertical: 10,
   },
   buttonConfirm: {
-    backgroundColor: colors.primary,
     borderRadius: 5,
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
   },

@@ -1,27 +1,28 @@
 import React from 'react'
-import {  Text, View, TouchableOpacity } from 'react-native'
-import { JOBS } from '../../../constants/data';
+import {  Text, View, TouchableWithoutFeedback, TextInput, Button, Keyboard } from 'react-native'
 import { styles } from './styles'
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-const InboxDetail = ({navigation, route}) => {
+const InboxDetail = () => {
   
-  // const product = useSelector((state) => state.products.selected)
+  const product = useSelector((state) => state.inbox.selected)
 
-  const {categoryId, title} = route.params;
-  const job = JOBS.find((job) => job.id === categoryId)
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{job.title}</Text>
-      <Text style={styles.title}>{job.description}</Text>
-      <Text style={styles.title}>{job.weight}</Text>
-      <Text style={styles.title}>{job.price}</Text>
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.buttonConfirm} onPress={()=> null}>
-            <Text style={styles.textSend}>Enviar</Text>
-        </TouchableOpacity>
+    <TouchableWithoutFeedback  onPress={()=> Keyboard.dismiss()}>
+      <View style={styles.container}>
+        <Text style={styles.title}>{product.title}</Text>
+        <Text style={styles.title}>{product.description}</Text>
+        <View style={styles.footer}>
+          <View style={styles.buttonConfirm}>
+            <TextInput 
+              style={styles.msg}
+              placeholder={'Escriba su mensaje'} />
+          </View>
+            <Button title='Enviar' style={styles.textSend}/>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   )
 }
 

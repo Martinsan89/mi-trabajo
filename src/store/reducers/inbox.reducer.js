@@ -1,16 +1,16 @@
-import { CATEGORIES } from "../../constants/data/categories";
-import { categoryTypes } from "../types/category.types";
+import { JOBS } from "../../constants/data/jobs";
+import { inboxTypes } from "../types/inbox.types";
 
-const { SELECT_CATEGORY } = categoryTypes;
+const { SELECT_INBOX } = inboxTypes;
 
 const initialState = {
-  categories: CATEGORIES,
+  categories: JOBS,
   selected: null,
 };
 
-const categoryReducer = (state = initialState, action) => {
+const inboxReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SELECT_CATEGORY:
+    case SELECT_INBOX:
       const indexCategory = state.categories.findIndex(
         (category) => category.id === action.categoryId
       );
@@ -27,4 +27,4 @@ const categoryReducer = (state = initialState, action) => {
   }
 };
 
-export default categoryReducer;
+export default inboxReducer;

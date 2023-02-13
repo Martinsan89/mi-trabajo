@@ -34,7 +34,6 @@ const Login = ({navigation}) => {
                     <Text style={styles.label}>Ingrese su password</Text>
                     <TextInput style={styles.input} placeholder="Password" />
                 </View>
-                {/* redirecciona a la pagina del usuario, por ahora  */}
                 <Pressable 
                     style={styles.btnLogin}
                     onPress={() => navigation.navigate('TabsNavigator')}>

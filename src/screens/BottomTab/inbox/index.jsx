@@ -1,21 +1,25 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, FlatList } from 'react-native'
 import React from 'react'
-import {JOBS} from '../../../constants/data/index'
 import {InboxItem} from '../../../components/'
 import {styles} from './styles'
-// import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { selectInbox } from '../../../store/actions';
 
 const Inbox = ({navigation}) => {
+  const dispatch = useDispatch();
 
-  const onDelete = (id) => {};
+  const categories = useSelector((state) => state.inbox.categories)
+
 
   const onSelected = (item) => {
-    // dispatch(selectedCategory(item.id))
+    dispatch(selectInbox(item.id))
     navigation.navigate("InboxDetail", {
       title: item.title,
       categoryId: item.id
     });
   };
+
+
 
   const renderItem = ({item}) => <InboxItem item={item} onSelected={onSelected}/> 
   const keyExtractor = (item) => item.id.toString();
@@ -23,7 +27,7 @@ const Inbox = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.listContainer}>
         <FlatList 
-          data={JOBS}
+          data={categories}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           style={styles.listContainer}
