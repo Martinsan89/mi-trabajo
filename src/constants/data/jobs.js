@@ -2,7 +2,7 @@ export const JOBS = [
   {
     id: 1,
     categoryId: 1,
-    title: "Pan de yema",
+    title: "Obrero",
     description: "clasico y delicioso pan de yema",
     weight: "60gr",
     price: 1.0,
@@ -10,7 +10,7 @@ export const JOBS = [
   {
     id: 2,
     categoryId: 1,
-    title: "Pan frances",
+    title: "Obrero",
     description: "clasico y tierno pan frances",
     weight: "80gr",
     price: 1.5,
@@ -18,7 +18,7 @@ export const JOBS = [
   {
     id: 3,
     categoryId: 2,
-    title: "Pan integral",
+    title: "Panadero",
     description: "clasico y saludable pan integral",
     weight: "70gr",
     price: 1.8,
@@ -26,7 +26,7 @@ export const JOBS = [
   {
     id: 4,
     categoryId: 2,
-    title: "Pan Frances integral",
+    title: "Panadero",
     description: "clasico y tierno pan frances integral",
     weight: "90gr",
     price: 2.0,
@@ -34,7 +34,7 @@ export const JOBS = [
   {
     id: 5,
     categoryId: 3,
-    title: "Pan de trigo",
+    title: "Utilero",
     description: "clasico y delicioso pan de trigo",
     weight: "60gr",
     price: 1.0,
@@ -42,7 +42,7 @@ export const JOBS = [
   {
     id: 6,
     categoryId: 3,
-    title: "Pan de hamburguesa",
+    title: "Utilero",
     description: "clasico y delicioso pan de hamburguesa",
     weight: "60gr",
     price: 1.0,
@@ -50,7 +50,7 @@ export const JOBS = [
   {
     id: 7,
     categoryId: 4,
-    title: "Pan de maíz",
+    title: "Seguridad",
     description: "clasico y delicioso pan de maíz",
     weight: "60gr",
     price: 1.0,
@@ -58,7 +58,7 @@ export const JOBS = [
   {
     id: 8,
     categoryId: 5,
-    title: "Pan de centeno",
+    title: "Seguridad",
     description: "clasico y delicioso pan de centeno",
     weight: "60gr",
     price: 1.0,
@@ -66,7 +66,7 @@ export const JOBS = [
   {
     id: 9,
     categoryId: 6,
-    title: "Pan de cebada",
+    title: "Atencion al cliente",
     description: "clasico y delicioso pan de cebada",
     weight: "60gr",
     price: 1.0,

@@ -1,0 +1,41 @@
+import { View, Text, FlatList, SafeAreaView } from "react-native";
+import React from "react";
+import { styles } from "./styles";
+import { CaterogyItem } from "../../../components";
+import { CATEGORIES } from "../../../constants/data"; 
+// import { useSelector, useDispatch } from "react-redux";
+// import { selectedCategory} from '../../store/actions';
+
+
+const Jobs = ({ navigation }) => {
+  // const dispatch = useDispatch();
+  // const categories = useSelector((state) => state.category.categories);
+
+  const onSelected = (item) => {
+    // dispatch(selectedCategory(item.id))
+    navigation.navigate("JobsFiltered", {
+      title: item.title,
+      categoryId: item.id
+    });
+  };
+
+  const renderItem = ({ item }) => (
+    <CaterogyItem item={item} onSelected={onSelected} />
+  );
+  const keyExtractor = (item) => item.id.toString();
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={CATEGORIES}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        style={styles.containerList}
+        contentContainerStyle={styles.contentContainerList}
+      />
+    </SafeAreaView>
+  );
+};
+
+export default Jobs;
+
