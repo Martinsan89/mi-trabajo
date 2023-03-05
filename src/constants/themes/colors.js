@@ -5,4 +5,5 @@ export const colors = {
   white: "#fff",
   default: "#626893",
   done: "green",
+  error: "red",
 };

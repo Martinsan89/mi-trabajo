@@ -11,7 +11,7 @@ const InboxItem = ({item, onSelected}) => {
             style={styles.contentContainer}
             onPress={() => onSelected(item)}>
                 <Text style={styles.title}>
-                    {item.title}
+                    {item.msg}
                 </Text>
                 <View style={styles.detailsContainer}>
                     <Text style={styles.price}>{item.description}</Text>

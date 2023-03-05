@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Profile } from "../screens";
+import { Profile, EditProfile } from "../screens";
 import { colors } from "../constants";
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { TouchableOpacity } from "react-native";
@@ -35,19 +35,19 @@ const ProfileNavigator =() => {
                     headerTitleAlign: 'center',
                     headerRight: () => {
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                                <Ionicons name='notifications' style={{fontSize: 22}}  /> 
-                            </TouchableOpacity>
-                        )
-                    },
-                    headerLeft: () => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                                <Ionicons name='log-out' style={{fontSize: 22}}  /> 
+                            <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
+                                <Ionicons name='pencil-outline' style={{fontSize: 22}}  /> 
                             </TouchableOpacity>
                         )
                     }
                 })}
+            />
+            <Stack.Screen 
+                name='EditProfile' 
+                component={EditProfile} 
+                options={{
+                    title:'EditProfile'
+                }}
             />
         </Stack.Navigator>
     )

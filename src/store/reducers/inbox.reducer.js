@@ -1,7 +1,7 @@
 import { JOBS } from "../../constants/data/jobs";
 import { inboxTypes } from "../types/inbox.types";
 
-const { SELECT_INBOX } = inboxTypes;
+const { SELECT_INBOX, CONFIRM_MSG } = inboxTypes;
 
 const initialState = {
   categories: JOBS,

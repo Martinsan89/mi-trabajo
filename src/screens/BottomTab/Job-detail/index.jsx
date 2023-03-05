@@ -1,20 +1,42 @@
 import React from 'react'
-import {  Text, View } from 'react-native'
+import { Text, View, TouchableWithoutFeedback, TextInput, Button, Keyboard } from 'react-native'
 import { styles } from './styles'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import {confirmMsg} from '../../../store/actions/inbox.action'
 
-const JobDetail = () => {
+const JobDetail = ({route}) => {
+
+  let description = route.params.description;
+
+  const [msg, setMsg] = useState('')
+
+  // const product = useSelector((state) => state.inbox.selected)
+
+  const dispatch = useDispatch();
+
+  const createMsg = () => {
+    dispatch(confirmMsg(msg))
+  }
   
-  const product = useSelector((state) => state.products.selected)
 
- 
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{product.title}</Text>
-      <Text style={styles.title}>{product.description}</Text>
-      <Text style={styles.title}>{product.weight}</Text>
-      <Text style={styles.title}>{product.price}</Text>
-    </View>
+    <TouchableWithoutFeedback  onPress={()=> Keyboard.dismiss()}>
+      <View style={styles.container}>
+        {/* <Text style={styles.title}>{title}</Text> */}
+        <Text style={styles.title}>{description}</Text>
+        <View style={styles.footer}>
+          <View style={styles.buttonConfirm}>
+            <TextInput 
+              style={styles.msg}
+              placeholder={'Escriba su mensaje'}
+              onChangeText={(newMsg)=>setMsg(newMsg)} />
+          </View>
+            <Button title='Enviar' style={styles.textSend} onPress={createMsg}/>
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
   )
 }
 

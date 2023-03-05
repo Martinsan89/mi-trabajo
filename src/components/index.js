@@ -7,3 +7,7 @@ export { default as IconButton } from "./IconButton/index";
 export { default as CaterogyItem } from "./category-item/index";
 export { default as JobItem } from "./job-item/index";
 export { default as InboxItem } from "./inbox-item/index";
+export { default as Input } from "./input/index";
+export { default as ImageSelector } from "./ImageSelector/index";
+export { default as LocationSelector } from "./location-selector/index";
+export { default as MapPreview } from "./maps-preview/index";

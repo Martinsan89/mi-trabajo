@@ -2,47 +2,56 @@ import { StyleSheet } from "react-native";
 import { colors } from "../../../constants";
 
 export const styles = StyleSheet.create({
+  keybordContainer: {
+    flex: 1,
+  },
   container: {
     flex: 1,
-    backgroundColor: colors.secondary,
-    paddingTop: 20,
-  },
-  buttonBackContainer: {
-    width: "25%",
-    marginLeft: 5,
-    paddingVertical: 25,
-  },
-  buttonBack: {
-    backgroundColor: colors.default,
-  },
-  header: {
-    fontSize: 55,
-    color: colors.white,
-    alignSelf: "center",
-  },
-  formContainer: {
-    marginVertical: 20,
-    paddingLeft: 15,
-    flexDirection: "column",
     justifyContent: "center",
-    alignSelf: "center",
+    alignItems: "center",
+  },
+  content: {
+    width: "80%",
+    maxWidth: 400,
+    padding: 15,
+    margin: 15,
+    borderColor: colors.primary,
+    borderWidth: 1,
+    backgroundColor: colors.white,
+    borderRadius: 5,
+    minHeight: 330,
+  },
+  title: {
+    fontSize: 18,
+    // fontFamily: 'Bitter-Medium',
+    textAlign: "center",
   },
   label: {
-    fontSize: 18,
-    color: colors.white,
+    fontSize: 14,
+    // fontFamily: 'Bitter-Regular',
+    marginVertical: 8,
   },
-  input: {
-    backgroundColor: colors.white,
-    fontSize: 15,
-    paddingHorizontal: 10,
+  buttonContainer: {
     marginVertical: 10,
   },
-  btnLogin: {
-    backgroundColor: colors.primary,
-    color: colors.white,
+  prompt: {
+    width: "100%",
     alignItems: "center",
-    paddingVertical: 10,
-    borderRadius: 18,
-    marginTop: 10,
+    marginVertical: 10,
+  },
+  promptButton: {
+    width: "100%",
+    backgroundColor: colors.secondary,
+    borderWidth: 1,
+    borderColor: colors.primary,
+    padding: 10,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  promptMessage: {
+    fontSize: 14,
+    // fontFamily: 'Bitter-Medium',
+    color: colors.text,
   },
 });

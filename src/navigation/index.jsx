@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 
-// import TabsNavigator from "./tabs";
 import HomeNavigator from './homeNavigator'
+import RegisterNavigator from "./register";
 
 const AppNavigator = () => {
+    const userId = useSelector((state) => state.register.userId)
     return (
         <NavigationContainer>
-            <HomeNavigator />
+            {
+                userId? <HomeNavigator /> : <RegisterNavigator />
+            }
         </NavigationContainer>
     )
 };

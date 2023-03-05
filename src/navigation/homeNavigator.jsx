@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator()
 const HomeNavigator = () => {
     return (
         <Stack.Navigator 
-            initialRouteName='Home'
+            initialRouteName='TabsNavigator'
             screenOptions={{
                 headerShown: true,
                 headerStyle: {
@@ -28,14 +28,14 @@ const HomeNavigator = () => {
             }}    
         >
             <Stack.Screen 
-                name='Home' 
-                component={Home}
+                name='TabsNavigator' 
+                component={TabsNavigator}
                 options={{
                     headerShown: false
                     
                 }} 
             />
-            <Stack.Screen 
+            {/* <Stack.Screen 
                 name='User' 
                 component={Jobs}
                 options={({navigation}) => ({
@@ -50,7 +50,7 @@ const HomeNavigator = () => {
                     }
                       
                 })}
-            />
+            /> */}
             <Stack.Screen 
                 name='Employer' 
                 component={Employer} 
@@ -72,21 +72,21 @@ const HomeNavigator = () => {
                     title:'Register'
                 }}
             />
-            <Stack.Screen 
+            {/* <Stack.Screen 
                 name='Notifications' 
                 component={Notifications} 
                 options={{
                     title:'Notifications'
                 }}
-            />
-            <Stack.Screen 
+            /> */}
+            {/* <Stack.Screen 
                 name='TabsNavigator' 
                 component={TabsNavigator} 
                 options={{
                     headerShown: false,
                     
                 }}
-            />
+            /> */}
            
         </Stack.Navigator>
     )

@@ -5,7 +5,7 @@ export { default as Register } from "./App/Register";
 export { default as Jobs } from "./BottomTab/Jobs/index";
 export { default as JobsFiltered } from "./BottomTab/Jobs-filtered/index";
 export { default as JobDetail } from "./BottomTab/Job-detail";
-export { default as Notifications } from "./App/Notifications";
+export { default as EditProfile } from "./BottomTab/profile/editProfile/index";
 export { default as Profile } from "./BottomTab/profile";
 export { default as Inbox } from "./BottomTab//inbox";
 export { default as InboxDetail } from "./BottomTab/inbox-detail";

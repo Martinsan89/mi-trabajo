@@ -1,53 +1,24 @@
-import { View, Text, TextInput, Pressable, TouchableOpacity } from 'react-native'
+import { View, Text, Image, FlatList  } from 'react-native'
 import React from 'react'
 import {styles} from './styles'
-import { TextFont } from '../../../components'
-import Ionicons from '@expo/vector-icons/Ionicons'
-
+import { useSelector } from 'react-redux'
+import ProfileItem from '../../../components/profile-item'
 
 
 const Profile = ({navigation}) => {
+  const places = useSelector((state) => state.place.places)
 
-  // const onDelete = (id) => {};
+  const renderItem = ({item}) => <ProfileItem {...item}/>
 
+  const keyExtractor = (item) => item.id
   
   return (
-
-    <View style={styles.container}>
-        <View >
-            <TouchableOpacity style={styles.buttonBackContainer} onPress={()=> null}>
-                <Ionicons 
-                    name='pencil' 
-                    title='Edit' 
-                    style={styles.buttonBack} 
-                />
-                <Text style={styles.buttonText}>Edit</Text>
-            </TouchableOpacity>
-        </View>
-      <View style={styles.headerContainer}>
-                <TextFont textType={'Regular'} style={styles.header}>
-                    <Text>Perfil</Text>
-                </TextFont>
-            </View>
-            <View style={styles.formContainer}>
-                <View>
-                    <Text style={styles.label}>Ingrese su nombre</Text>
-                    <TextInput style={styles.input} placeholder="Nombre" />
-                </View>
-                <View>
-                    <Text style={styles.label}>Ingrese su email</Text>
-                    <TextInput style={styles.input} placeholder="Email" />
-                </View>
-                <View>
-                    <Text style={styles.label}>Ingrese su password</Text>
-                    <TextInput style={styles.input} placeholder="Password" />
-                </View>
-                <View>
-                    <Text style={styles.label}>Repita el password</Text>
-                    <TextInput style={styles.input} placeholder="Confirmar Password" />
-                </View>
-            </View>
-    </View>
+    <FlatList 
+      data={places}
+      style={styles.container}
+      keyExtractor={keyExtractor}
+      renderItem={renderItem}
+    />
   )
 }
 

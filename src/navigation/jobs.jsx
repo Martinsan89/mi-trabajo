@@ -1,6 +1,6 @@
 import { TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Jobs, JobsFiltered, JobDetail } from "../screens/index";
+import { Jobs, JobsFiltered, JobDetail, InboxDetail } from "../screens/index";
 import { colors } from "../constants";
 import Ionicons from '@expo/vector-icons/Ionicons'
 
@@ -55,6 +55,31 @@ const JobsNavigator = () => {
                 component={JobsFiltered} 
                 options={({route}) => ({
                     title: route.params.title
+                })}
+            />
+            <Stack.Screen
+                name="InboxDetail"
+                component={InboxDetail}
+                options={({navigation}) => ({
+                    title: 'InboxDetail',
+                    headerTitleStyle:{
+                        fontSize: 22,
+                    },
+                    headerTitleAlign: 'center',
+                    headerRight: () => {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
+                                <Ionicons name='notifications' style={{fontSize: 22}}  /> 
+                            </TouchableOpacity>
+                        )
+                    },
+                    headerLeft: () => {
+                        return (
+                            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                                <Ionicons name='log-out' style={{fontSize: 22}}  /> 
+                            </TouchableOpacity>
+                        )
+                    }
                 })}
             />
             <Stack.Screen 
