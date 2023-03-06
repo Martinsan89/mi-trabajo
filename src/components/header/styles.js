@@ -4,13 +4,13 @@ import { colors } from "../../constants";
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.secondary,
-    // padding: 20,
+    paddingHorizontal: 90,
     justifyContent: "center",
     alignItems: "center",
     height: 100,
   },
   title: {
-    fontSize: 45,
+    fontSize: 30,
     color: colors.black,
   },
 });

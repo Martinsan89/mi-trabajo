@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Profile, EditProfile } from "../screens";
+import { Profile, EditProfile, MapsScreen, ProfileDetail } from "../screens";
 import { colors } from "../constants";
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { TouchableOpacity } from "react-native";
@@ -47,6 +47,20 @@ const ProfileNavigator =() => {
                 component={EditProfile} 
                 options={{
                     title:'EditProfile'
+                }}
+            />
+            <Stack.Screen 
+                name='ProfileDetail' 
+                component={ProfileDetail} 
+                options={{
+                    title:'Maps'
+                }}
+            />
+            <Stack.Screen 
+                name='Maps' 
+                component={MapsScreen} 
+                options={{
+                    title:'Maps'
                 }}
             />
         </Stack.Navigator>

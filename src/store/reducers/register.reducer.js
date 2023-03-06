@@ -1,6 +1,6 @@
 import { registerTypes } from "../types";
 
-const { SING_IN, SING_UP } = registerTypes;
+const { SING_IN, SING_UP, LOG_OUT } = registerTypes;
 
 const initialState = {
   token: null,
@@ -20,6 +20,11 @@ const registerReducer = (state = initialState, action) => {
         ...state,
         token: action.token,
         userId: action.userId,
+      };
+    case LOG_OUT:
+      return {
+        token: null,
+        userId: null,
       };
     default:
       return state;

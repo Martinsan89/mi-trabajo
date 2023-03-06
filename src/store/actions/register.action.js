@@ -1,7 +1,7 @@
 import { URL_AUTH_SING_IN, URL_AUTH_SING_UP } from "../../firebase";
 import { registerTypes } from "../types";
 
-const { SING_IN, SING_UP } = registerTypes;
+const { SING_IN, SING_UP, LOG_OUT } = registerTypes;
 
 export const signUp = (email, password) => {
   return async (dispatch) => {
@@ -17,9 +17,9 @@ export const signUp = (email, password) => {
           returnSecureToken: true,
         }),
       });
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
+      // if (!response.ok) {
+      //   throw new Error("Something went wrong");
+      // }
 
       const data = await response.json();
 
@@ -48,9 +48,9 @@ export const signIn = (email, password) => {
           returnSecureToken: true,
         }),
       });
-      if (!response.ok) {
-        throw new Error("Something went wrong");
-      }
+      // if (!response.ok) {
+      //   throw new Error("Something went wrong");
+      // }
 
       const data = await response.json();
 
@@ -58,6 +58,20 @@ export const signIn = (email, password) => {
         type: SING_IN,
         token: data.idToken,
         userId: data.localId,
+      });
+    } catch (error) {
+      throw error;
+    }
+  };
+};
+
+export const logOut = () => {
+  return (dispatch) => {
+    try {
+      dispatch({
+        type: LOG_OUT,
+        toke: null,
+        userId: null,
       });
     } catch (error) {
       throw error;

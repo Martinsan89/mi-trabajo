@@ -1,7 +1,7 @@
 import { TouchableOpacity, Image, View, Text } from "react-native";
 import {styles} from './styles'
 
-const ProfileItem =({id, title, image, onSelect}) => {
+const ProfileItem =({id, title, image, address, onSelect}) => {
 
     // console.warn(image)
     return (
@@ -9,6 +9,7 @@ const ProfileItem =({id, title, image, onSelect}) => {
             <Image style={styles.image} source={{uri: image}}/>
             <View style={styles.info}>
                 <Text style={styles.title}>{title}</Text>
+                <Text style={styles.address}>{address}</Text>
             </View>
         </TouchableOpacity>
     )

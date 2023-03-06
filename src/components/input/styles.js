@@ -9,15 +9,16 @@ export const styles = StyleSheet.create({
     borderBottomColor: colors.primary,
     borderBottomWidth: 1,
     width: "90%",
-    // fontFamily: 'Bitter-Regular',
+    fontFamily: "Neuton-Regular",
     marginBottom: 10,
+    fontSize: 18,
   },
-  message: {
-    marginVertical: 5,
-  },
+  // message: {
+  //   marginVertical: 1,
+  // },
   helperText: {
-    fontSize: 12,
-    // fontFamily: 'Bitter-Regular',
+    fontSize: 15,
+    fontFamily: "Neuton-Regular",
     color: colors.error,
   },
 });

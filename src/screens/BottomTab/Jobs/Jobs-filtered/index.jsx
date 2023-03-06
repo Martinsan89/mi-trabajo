@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import { SafeAreaView, FlatList } from 'react-native'
 import { styles } from './styles'
-import { JobItem } from '../../../components';
+import { JobItem } from '../../../../components';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectProduct, filterProducts } from '../../../store/actions';
+import { selectProduct, filterProducts } from '../../../../store/actions';
 
 
 const JobsFiltered = ({navigation}) => {

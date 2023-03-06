@@ -1,6 +1,6 @@
 import { View, FlatList } from 'react-native'
 import React from 'react'
-import {InboxItem} from '../../../components/'
+import {InboxItem} from '../../../components'
 import {styles} from './styles'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectInbox, getChats } from '../../../store/actions/index';

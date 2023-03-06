@@ -1,11 +1,11 @@
 import { View, Text, TextInput, Pressable, Button, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
 import React, {useReducer, useState} from 'react'
 import { styles } from './styles'
-import { Input } from '../../../components'
-import { colors } from '../../../constants'
-import { useDispatch } from 'react-redux'
-import { signIn, signUp } from '../../../store/actions' 
-import { onInputChange, UPDATED_FORM } from '../../../utils/form'
+import { Input, Header } from '../../components'
+import { colors } from '../../constants'
+import { useDispatch, useSelector } from 'react-redux'
+import { signIn, signUp } from '../../store/actions' 
+import { onInputChange, UPDATED_FORM } from '../../utils/form'
 
 const initialState = {
     email: {value: '', error: '', touched: false, hasError: true},
@@ -38,13 +38,17 @@ const Register = ({navigation, route}) => {
     const [formState, dispatchFormState] = useReducer(formReducer, initialState)
     const [isLogin, setIsLogin] = useState(true)
     const title = isLogin? 'Login' : 'Register'
-    const message = isLogin? 'Dont have an account' : 'Already have an account'
-    const messageButton = isLogin? 'Login' : 'Register'
+    const message = isLogin? 'Dont have an account' : 'Already have an account';
+    const messageButton = isLogin? 'Login' : 'Register';
+    const [error, setError] = useState(false)
 
+    const userId = useSelector((state) => state.register.id)
     const onHandlerSubmit = () => {
         dispatch( isLogin ? 
             signIn(formState.email.value,formState.password.value) : 
             signUp(formState.email.value,formState.password.value))
+        if(!userId) setError(true)    
+
     }
 
     const onHandlerInputChange = ( value, type) => {
@@ -57,6 +61,7 @@ const Register = ({navigation, route}) => {
         enabled    
     >
     <View style={styles.container}>
+        <Header title='Mi-Trabajo' />
         <View style={styles.content}>
             <Text style={styles.title}>{title}</Text>
             <Input 
@@ -88,13 +93,13 @@ const Register = ({navigation, route}) => {
                 labelStyle={styles.label}
             />
             <View style={styles.buttonContainer}>
-                <Button title={messageButton} color={colors.secondary} onPress={onHandlerSubmit}/>
+                <Button title={messageButton} color={colors.primary} onPress={onHandlerSubmit}/>
                 <View style={styles.prompt}>
-                    <TouchableOpacity style={styles.promptButton} onPress={()=> setIsLogin(!isLogin)}>
+                    <TouchableOpacity style={styles.promptButton} onPress={()=> {setIsLogin(!isLogin), setError(false)}}>
                         <Text style={styles.promptText}>{message}</Text>
                     </TouchableOpacity>
                 </View>
-
+                {error && <Text style={{color: 'red'}}>Usuario no encontrado</Text>}
             </View>
         </View>
     </View>

@@ -3,7 +3,7 @@ import React from 'react'
 import {styles} from './styles'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addPlace } from '../../../../store/slice/place.slice'
+import { savePlace } from '../../../../store/slice/place.slice'
 import {ImageSelector, LocationSelector}  from '../../../../components/index'
 
 
@@ -16,7 +16,7 @@ const EditProfile = ({navigation}) => {
   const dispatch = useDispatch()
 
   const onHandlerSubmit = () => {
-    dispatch(addPlace({title, image, coords}))
+    dispatch(savePlace(title, image, coords))
     navigation.goBack()
   }
 
@@ -29,14 +29,14 @@ const EditProfile = ({navigation}) => {
   }
 
   const onLocation = (location) => {
-    setCoords(location)
+    setCoords(location);
   }
   
   return (
 
     <ScrollView style={styles.container}>
         <View style={styles.content}>
-            <Text style={styles.title}>Lugar</Text>
+            <Text style={styles.title}>Profesión</Text>
             <TextInput style={styles.input} 
               placeholder='Escribe el nombre del lugar' 
               value={title}

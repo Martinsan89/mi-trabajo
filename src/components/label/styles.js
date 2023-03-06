@@ -7,13 +7,13 @@ export const styles = StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    // fontFamily: 'Bitter-Regular',
+    fontFamily: "Neuton-Italic",
     marginVertical: 5,
     color: colors.text,
   },
   sublabel: {
     fontSize: 12,
-    // fontFamily: 'Bitter-Regular',
+    fontFamily: "Neuton-Italic",
     color: colors.gray,
     marginVertical: 5,
   },

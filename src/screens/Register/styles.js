@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../../constants";
+import { colors } from "../../constants";
 
 export const styles = StyleSheet.create({
   keybordContainer: {
@@ -9,26 +9,27 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: colors.primary,
   },
   content: {
+    backgroundColor: colors.secondary,
     width: "80%",
     maxWidth: 400,
     padding: 15,
     margin: 15,
-    borderColor: colors.primary,
+    borderColor: colors.black,
     borderWidth: 1,
-    backgroundColor: colors.white,
     borderRadius: 5,
     minHeight: 330,
   },
   title: {
     fontSize: 18,
-    // fontFamily: 'Bitter-Medium',
+    fontFamily: "Neuton-Regular",
     textAlign: "center",
   },
   label: {
-    fontSize: 14,
-    // fontFamily: 'Bitter-Regular',
+    fontSize: 18,
+    fontFamily: "Neuton-Light",
     marginVertical: 8,
   },
   buttonContainer: {
@@ -41,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   promptButton: {
     width: "100%",
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
     borderWidth: 1,
     borderColor: colors.primary,
     padding: 10,
@@ -50,8 +51,13 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   promptMessage: {
-    fontSize: 14,
-    // fontFamily: 'Bitter-Medium',
+    fontSize: 24,
+    fontFamily: "Neuton-ExtraLight",
     color: colors.text,
+    backgroundColor: colors.primary,
+  },
+  promptText: {
+    color: colors.white,
+    fontSize: 15,
   },
 });

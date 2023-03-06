@@ -51,7 +51,7 @@ const HomeNavigator = () => {
                       
                 })}
             /> */}
-            <Stack.Screen 
+            {/* <Stack.Screen 
                 name='Employer' 
                 component={Employer} 
                 options={{
@@ -71,7 +71,7 @@ const HomeNavigator = () => {
                 options={{
                     title:'Register'
                 }}
-            />
+            /> */}
             {/* <Stack.Screen 
                 name='Notifications' 
                 component={Notifications} 

@@ -3,7 +3,7 @@ import {  Text, View, TouchableWithoutFeedback, TextInput, Button, Keyboard } fr
 import { styles } from './styles'
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import {confirmMsg} from '../../../store/actions/inbox.action'
+import {confirmMsg} from '../../../../store/actions/inbox.action'
 
 const InboxDetail = () => {
 

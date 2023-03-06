@@ -3,10 +3,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Jobs, JobsFiltered, JobDetail, InboxDetail } from "../screens/index";
 import { colors } from "../constants";
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { useDispatch } from "react-redux";
+import { logOut } from "../store/actions";
 
 const Stack = createNativeStackNavigator();
 
+
 const JobsNavigator = () => {
+    const dispatch = useDispatch()
+
     return (
         <Stack.Navigator
             initialRouteName="Jobs"
@@ -34,16 +39,9 @@ const JobsNavigator = () => {
                         fontSize: 22,
                     },
                     headerTitleAlign: 'center',
-                    headerRight: () => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                                <Ionicons name='notifications' style={{fontSize: 22}}  /> 
-                            </TouchableOpacity>
-                        )
-                    },
                     headerLeft: () => {
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                            <TouchableOpacity onPress={() => dispatch(logOut())}>
                                 <Ionicons name='log-out' style={{fontSize: 22}}  /> 
                             </TouchableOpacity>
                         )
@@ -61,18 +59,11 @@ const JobsNavigator = () => {
                 name="InboxDetail"
                 component={InboxDetail}
                 options={({navigation}) => ({
-                    title: 'InboxDetail',
+                    title: 'Detalle del Mensaje',
                     headerTitleStyle:{
                         fontSize: 22,
                     },
                     headerTitleAlign: 'center',
-                    headerRight: () => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                                <Ionicons name='notifications' style={{fontSize: 22}}  /> 
-                            </TouchableOpacity>
-                        )
-                    },
                     headerLeft: () => {
                         return (
                             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
