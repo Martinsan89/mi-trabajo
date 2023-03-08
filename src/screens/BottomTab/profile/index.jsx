@@ -1,17 +1,25 @@
 import { View, Text, Image, FlatList  } from 'react-native'
 import React from 'react'
 import {styles} from './styles'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import ProfileItem from '../../../components/profile-item'
 import {Header} from '../../../components/index'
+import { useEffect } from 'react'
+import { loadPlaces } from '../../../store/slice/place.slice'
 
 
 const Profile = ({navigation}) => {
+  const dispatch = useDispatch();
+
   const places = useSelector((state) => state.place.places)
 
-  const renderItem = ({item}) => <ProfileItem {...item} onSelect={() => navigation.navigate('ProfileDetail', {profileId: item.id})}/>
+  const renderItem = ({item}) => <ProfileItem {...item} onSelect={() => navigation.navigate('ProfileDetail', {profileId: item.id})}/>;
 
-  const keyExtractor = (item) => item.id
+  const keyExtractor = (item) => item.id;
+
+  useEffect(()=>{
+    dispatch(loadPlaces());
+  },[dispatch])
   
   return (
     <View style={styles.container}>

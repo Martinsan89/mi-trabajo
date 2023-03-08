@@ -8,6 +8,9 @@ const ProfileDetail = ({ navigation, route }) => {
   const { profileId } = route.params;
 
   const place = useSelector((state) => state.place.places.find((place) => place.id === profileId));
+
+  const parseCoords = JSON.parse(place?.coords)
+
   return (
     <ScrollView style={styles.container}>
         <Text style={styles.title}>{place.title}</Text>
@@ -16,7 +19,7 @@ const ProfileDetail = ({ navigation, route }) => {
         <View style={styles.addressContainer}>
           <Text style={styles.address}>{place.address}</Text>
         </View>
-        <MapPreview style={styles.map} location={{ lat: place.coords.lat, lng: place.coords.lng }}>
+        <MapPreview style={styles.map} location={{ lat: parseCoords.lat, lng: parseCoords.lng }}>
           <Text>Ubicacion no disponible</Text>
         </MapPreview>
       </View>
