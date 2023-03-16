@@ -12,8 +12,8 @@ const JobItem = ({item, onSelected}) => {
                     {item.title}
                 </Text>
                 <View style={styles.detailsContainer}>
-                    <Text style={styles.price}>${item.price}</Text>
-                    <Text style={styles.weight}>{item.weight}</Text>
+                    <Text style={styles.description}>{item.description}</Text>
+                    <Text style={styles.type}>Tipo de empleo: {item.type}</Text>
                 </View>
         </TouchableOpacity>
     </View>

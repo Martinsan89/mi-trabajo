@@ -32,4 +32,14 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.white,
   },
+  textContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 2,
+  },
+  trash: {
+    fontSize: 25,
+    color: colors.white,
+  },
 });

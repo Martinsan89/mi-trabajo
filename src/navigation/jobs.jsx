@@ -2,7 +2,7 @@ import { TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Jobs, JobsFiltered, JobDetail, InboxDetail } from "../screens/index";
 import { colors } from "../constants";
-import Ionicons from '@expo/vector-icons/Ionicons'
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { useDispatch } from "react-redux";
 import { logOut } from "../store/actions";
 
@@ -33,7 +33,7 @@ const JobsNavigator = () => {
             <Stack.Screen 
                 name='Jobs' 
                 component={Jobs} 
-                options={({navigation}) => ({
+                options={() => ({
                     title: 'Trabajos',
                     headerTitleStyle:{
                         fontSize: 22,

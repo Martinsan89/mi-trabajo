@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { View, Button, Text, Alert } from "react-native";
+import { View,  Text, Alert, Pressable } from "react-native";
 import {styles} from './styles'
 import * as Location from 'expo-location'
 import MapPreview from "../maps-preview";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native"; 
 
 const LocationSelector = ({onLocation}) => {
     const [pickedLocation, setPickedLocation] = useState(null);
@@ -55,15 +55,16 @@ const LocationSelector = ({onLocation}) => {
             <MapPreview location={pickedLocation} style={styles.preview}>
                 <Text style={styles.text}>No hay ubicacion seleccionada</Text>
             </MapPreview>
-
-            <Button 
-                title="Seleccionar ubicacion"
-                onPress={onHandleGetLocation}
-            />
-            <Button 
-                title="Seleccionar desde el mapa"
-                onPress={onHandlerMapsLocation}
-            />
+            <View style={styles.btnContent}>
+                <Pressable style={styles.btn} onPress={onHandleGetLocation}>
+                    <Text style={styles.btnText}>Seleccionar ubicación</Text>
+                </Pressable>
+            </View>
+            <View style={styles.btnContent}>
+                <Pressable style={styles.btn} onPress={onHandlerMapsLocation}>
+                    <Text style={styles.btnText}>Seleccionar desde el mapa</Text>
+                </Pressable>
+            </View>
         </View>
     )
 }

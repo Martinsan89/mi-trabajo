@@ -8,8 +8,8 @@ export const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginVertical: 10,
     borderRadius: 18,
-    height: 120,
-    backgroundColor: colors.primary,
+    height: 160,
+    backgroundColor: colors.secondary,
   },
   contentContainer: {
     flex: 1,
@@ -17,18 +17,21 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    color: colors.white,
+    color: colors.black,
+    textAlign: "center",
   },
   detailsContainer: {
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-between",
+    marginTop: 5,
   },
-  price: {
+  description: {
     fontSize: 20,
-    color: colors.white,
+    color: colors.black,
   },
-  weight: {
-    fontSize: 20,
-    color: colors.white,
+  type: {
+    fontSize: 15,
+    color: colors.black,
+    paddingTop: 5,
   },
 });

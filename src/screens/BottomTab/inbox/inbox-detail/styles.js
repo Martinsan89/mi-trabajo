@@ -4,35 +4,43 @@ import { colors } from "../../../../constants";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignSelf: "center",
-    marginVertical: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.primary,
   },
   title: {
     fontSize: 25,
-  },
-  msg: {
-    fontSize: 15,
-    marginVertical: 15,
-  },
-  footer: {
-    backgroundColor: colors.white,
-    borderTopColor: colors.primary,
-    borderTopWidth: 1,
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    marginVertical: 10,
+    fontFamily: "Neuton-Light",
+    color: colors.white,
   },
   buttonConfirm: {
-    borderRadius: 5,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
+    width: 300,
+    height: 200,
+    marginVertical: 15,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: colors.white,
   },
-
-  textSend: {
+  msg: {
+    paddingVertical: 10,
     color: colors.white,
-    fontSize: 26,
-    textAlign: "center",
-    // fontFamily: 'Bitter-Bold',
+  },
+  textSend: {
+    backgroundColor: colors.secondary,
+    padding: 3,
+    opacity: 1,
+  },
+  text: {
+    fontSize: 23,
+    color: colors.black,
+    fontFamily: "Neuton-Light",
+  },
+  confirmContainer: {
+    marginVertical: 13,
+  },
+  confirm: {
+    color: colors.white,
+    fontFamily: "Neuton-Italic",
+    fontSize: 20,
   },
 });

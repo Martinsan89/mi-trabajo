@@ -1,38 +1,46 @@
 import React from 'react'
-import {  Text, View, TouchableWithoutFeedback, TextInput, Button, Keyboard } from 'react-native'
+import {  Text, View, TouchableWithoutFeedback, TextInput, Pressable, Keyboard } from 'react-native'
 import { styles } from './styles'
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import {confirmMsg} from '../../../../store/actions/inbox.action'
+import { colors } from '../../../../constants';
 
-const InboxDetail = () => {
+const InboxDetail = ({route}) => {
+  const [confirm, setConfirm] = useState(false)
+
+  let title = route.params.title;
+  let description = route.params.description;
 
   const [msg, setMsg] = useState('')
-
-  const product = useSelector((state) => state.inbox.selected)
 
   const dispatch = useDispatch();
 
   const createMsg = () => {
-    dispatch(confirmMsg(msg))
+    dispatch(confirmMsg(msg, title, description)),
+    setConfirm(true)
   }
   
-
-
   return (
     <TouchableWithoutFeedback  onPress={()=> Keyboard.dismiss()}>
       <View style={styles.container}>
-        <Text style={styles.title}>{product?.title}</Text>
-        <Text style={styles.title}>{product?.description}</Text>
-        <View style={styles.footer}>
-          <View style={styles.buttonConfirm}>
-            <TextInput 
-              style={styles.msg}
-              placeholder={'Escriba su mensaje'}
-              onChangeText={(newMsg)=>setMsg(newMsg)} />
-          </View>
-            <Button title='Enviar' style={styles.textSend} onPress={createMsg}/>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{description}</Text>
+        <View style={styles.buttonConfirm}>
+          <TextInput 
+            style={styles.msg}
+            placeholder={'Escriba su mensaje... '}
+            placeholderTextColor={colors.white}
+            onFocus={()=> setConfirm(false)}
+            onChangeText={(newMsg)=>setMsg(newMsg)} />
         </View>
+        {confirm && <View style={styles.confirmContainer}>
+          <Text style={styles.confirm}>Mensaje enviado</Text>
+        </View>}
+          <Pressable style={styles.textSend}  onPress={createMsg}>
+            <Text style={styles.text}>Enviar </Text>
+          </Pressable>
+ 
       </View>
     </TouchableWithoutFeedback>
   )

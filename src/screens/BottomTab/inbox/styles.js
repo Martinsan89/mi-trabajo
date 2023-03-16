@@ -5,10 +5,10 @@ import { colors } from "../../../constants";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
   },
   listContainer: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.secondary,
   },
 });

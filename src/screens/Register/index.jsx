@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable, Button, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, Button, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
 import React, {useReducer, useState} from 'react'
 import { styles } from './styles'
 import { Input, Header } from '../../components'
@@ -33,18 +33,19 @@ const formReducer = (state, action) => {
     }
 }
 
-const Register = ({navigation, route}) => {
-    const dispatch = useDispatch()
-    const [formState, dispatchFormState] = useReducer(formReducer, initialState)
-    const [isLogin, setIsLogin] = useState(true)
-    const title = isLogin? 'Login' : 'Register'
+const Register = () => {
+    const dispatch = useDispatch();
+    const [formState, dispatchFormState] = useReducer(formReducer, initialState);
+    const [isLogin, setIsLogin] = useState(true);
+    const title = isLogin? 'Login' : 'Register';
     const message = isLogin? 'Dont have an account' : 'Already have an account';
     const messageButton = isLogin? 'Login' : 'Register';
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
 
     const userId = useSelector((state) => state.register.id)
-    const onHandlerSubmit = () => {
-        dispatch( isLogin ? 
+
+    const onHandlerSubmit = async () => {
+        await dispatch( isLogin ? 
             signIn(formState.email.value,formState.password.value) : 
             signUp(formState.email.value,formState.password.value))
         if(!userId) setError(true)    

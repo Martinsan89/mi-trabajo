@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
+    backgroundColor: colors.secondary,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
@@ -25,6 +26,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    color: colors.white,
+    color: colors.black,
   },
 });

@@ -35,7 +35,7 @@ export const getChats = () => {
 export const deleteChats = (id) => {
   return async (dispatch) => {
     try {
-      const response = await fetch(`${REALTIME_DB_URL}/msgs/${id}`, {
+      const response = await fetch(`${REALTIME_DB_URL}/msgs/${id}.json`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -43,15 +43,14 @@ export const deleteChats = (id) => {
       });
 
       const result = await response.json();
-      //   console.warn("result delete", result);
 
       dispatch({
-        type: GET_CHATS,
+        type: DELETE_CHAT,
         id,
       });
     } catch (error) {
       dispatch({
-        type: GET_CHATS,
+        type: DELETE_CHAT,
         error,
       });
     }

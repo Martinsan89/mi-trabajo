@@ -4,16 +4,18 @@ import { colors } from "../../../../constants";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.primary,
   },
   image: {
     height: "40%",
     minHeight: 300,
-    width: "100%",
+    width: "80%",
+    alignSelf: "center",
+    marginTop: 5,
   },
   title: {
     fontSize: 24,
-    alignSelf: "center",
-    marginVertical: 10,
+    textAlign: "center",
     backgroundColor: colors.secondary,
     padding: 10,
   },
@@ -38,5 +40,21 @@ export const styles = StyleSheet.create({
   },
   map: {
     height: 300,
+  },
+  delete: {
+    marginBottom: 55,
+    width: "50%",
+    alignSelf: "center",
+  },
+  textSend: {
+    backgroundColor: colors.black,
+    padding: 3,
+    opacity: 1,
+  },
+  text: {
+    textAlign: "center",
+    fontSize: 23,
+    color: colors.white,
+    fontFamily: "Neuton-Light",
   },
 });

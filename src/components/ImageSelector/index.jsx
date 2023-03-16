@@ -1,9 +1,9 @@
-import { View, Image, Text, Alert, Button } from "react-native";
+import { View, Image, Text, Alert, Button, Pressable } from "react-native";
 import { useState } from "react";
 import * as ImagePicker from 'expo-image-picker'
 import * as Permissions from 'expo-permissions'
 import {styles} from './styles'
-import { colors } from "../../constants/themes/colors";
+
 
 const ImageSelector = ({onImage}) => {
     const [pickedUrl, setPickedUrl] = useState(null)
@@ -39,11 +39,9 @@ const ImageSelector = ({onImage}) => {
                     <Image style={styles.image} source={{uri: pickedUrl}} />
                 )}
             </View>
-            <Button 
-                title="Seleccionar imagen"
-                color={colors.primary}
-                onPress={onHandleTakeImage}
-            />
+            <Pressable style={styles.btn} onPress={onHandleTakeImage}>
+                <Text style={styles.btnText}>Seleccionar Imagen</Text>
+            </Pressable>
         </View>
     )
 }

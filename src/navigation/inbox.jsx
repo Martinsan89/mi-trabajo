@@ -3,11 +3,15 @@ import { Inbox, InboxDetail } from "../screens";
 import { colors } from "../constants";
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
+import { logOut } from "../store/actions";
 
 
 const Stack = createNativeStackNavigator();
 
 const InboxNavigator =() => {
+    const dispatch = useDispatch()
+
     return (
         <Stack.Navigator
             initialRouteName='Inbox'
@@ -29,21 +33,14 @@ const InboxNavigator =() => {
                 name="Inbox"
                 component={Inbox}
                 options={({navigation}) => ({
-                    title: 'Inbox',
+                    title: 'Correos',
                     headerTitleStyle:{
                         fontSize: 22,
                     },
                     headerTitleAlign: 'center',
-                    headerRight: () => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                                <Ionicons name='notifications' style={{fontSize: 22}}  /> 
-                            </TouchableOpacity>
-                        )
-                    },
                     headerLeft: () => {
                         return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                            <TouchableOpacity onPress={() => dispatch(logOut())}>
                                 <Ionicons name='log-out' style={{fontSize: 22}}  /> 
                             </TouchableOpacity>
                         )
@@ -54,18 +51,11 @@ const InboxNavigator =() => {
                 name="InboxDetail"
                 component={InboxDetail}
                 options={({navigation}) => ({
-                    title: 'InboxDetail',
+                    title: 'Detalle',
                     headerTitleStyle:{
                         fontSize: 22,
                     },
                     headerTitleAlign: 'center',
-                    headerRight: () => {
-                        return (
-                            <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-                                <Ionicons name='notifications' style={{fontSize: 22}}  /> 
-                            </TouchableOpacity>
-                        )
-                    },
                     headerLeft: () => {
                         return (
                             <TouchableOpacity onPress={() => navigation.navigate('Home')}>

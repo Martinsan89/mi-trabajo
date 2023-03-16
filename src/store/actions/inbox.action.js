@@ -8,7 +8,7 @@ export const selectInbox = (id) => ({
   categoryId: id,
 });
 
-export const confirmMsg = (msg) => {
+export const confirmMsg = (msg, title, description) => {
   return async (dispatch) => {
     try {
       const response = await fetch(`${REALTIME_DB_URL}/msgs.json`, {
@@ -19,6 +19,8 @@ export const confirmMsg = (msg) => {
         body: JSON.stringify({
           date: Date.now(),
           msg,
+          title,
+          description,
         }),
       });
 

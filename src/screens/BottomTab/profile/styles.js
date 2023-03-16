@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
   },
   list: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.secondary,
+    marginTop: 10,
   },
 });

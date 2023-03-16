@@ -13,9 +13,6 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 18,
   },
-  // message: {
-  //   marginVertical: 1,
-  // },
   helperText: {
     fontSize: 15,
     fontFamily: "Neuton-Regular",

@@ -18,7 +18,8 @@ const JobsFiltered = ({navigation}) => {
     dispatch(selectProduct(item.id));
     navigation.navigate('JobDetail', {
       jobId: item.id,
-      description: item.description
+      description: item.description,
+      title: item.title
     })
   }
 

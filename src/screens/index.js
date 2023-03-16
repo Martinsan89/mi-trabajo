@@ -1,6 +1,3 @@
-// export { default as Home } from "./App/Home/index";
-// export { default as Employer } from "./App/Employer/index";
-// export { default as Login } from "./App/Login";
 export { default as Register } from "./Register";
 export { default as Jobs } from "./BottomTab/Jobs/index";
 export { default as JobsFiltered } from "./BottomTab/Jobs/Jobs-filtered/index";

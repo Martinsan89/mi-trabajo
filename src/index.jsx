@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import {useFonts} from 'expo-font'
 import { View, ActivityIndicator } from "react-native";
 import { styles } from "./styles";
 import AppNavigator from "./navigation/index";
 
-import {init} from './db'
 
 import { Provider } from "react-redux";
 import store from './store/index';
 import { colors } from "./constants";
 
+import {init} from './db/index'
 init()
   .then(() => {
     console.log('Initialized database')
@@ -18,6 +18,7 @@ init()
     console.log('Initializing db failed');
     console.log(err)
   })
+
 
 const App = () => {
   const [loaded] = useFonts({

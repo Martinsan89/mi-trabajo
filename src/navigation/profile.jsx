@@ -3,10 +3,16 @@ import { Profile, EditProfile, MapsScreen, ProfileDetail } from "../screens";
 import { colors } from "../constants";
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { TouchableOpacity } from "react-native";
+import { logOut } from "../store/actions";
+import { useDispatch } from "react-redux";
+
+
 
 const Stack = createNativeStackNavigator();
 
 const ProfileNavigator =() => {
+    const dispatch = useDispatch()
+
     return (
         <Stack.Navigator
             initialRouteName='Profile'
@@ -39,6 +45,13 @@ const ProfileNavigator =() => {
                                 <Ionicons name='pencil-outline' style={{fontSize: 22}}  /> 
                             </TouchableOpacity>
                         )
+                    },
+                    headerLeft: () => {
+                        return (
+                            <TouchableOpacity onPress={() => dispatch(logOut())}>
+                                <Ionicons name='log-out' style={{fontSize: 22}}  /> 
+                            </TouchableOpacity>
+                        )
                     }
                 })}
             />
@@ -46,14 +59,14 @@ const ProfileNavigator =() => {
                 name='EditProfile' 
                 component={EditProfile} 
                 options={{
-                    title:'EditProfile'
+                    title:'Editar'
                 }}
             />
             <Stack.Screen 
                 name='ProfileDetail' 
                 component={ProfileDetail} 
                 options={{
-                    title:'Maps'
+                    title:'Detalle'
                 }}
             />
             <Stack.Screen 

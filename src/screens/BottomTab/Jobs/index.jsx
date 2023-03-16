@@ -1,4 +1,4 @@
-import { View, Text, FlatList, SafeAreaView } from "react-native";
+import { FlatList, SafeAreaView } from "react-native";
 import React from "react";
 import { styles } from "./styles";
 import { CaterogyItem } from "../../../components";

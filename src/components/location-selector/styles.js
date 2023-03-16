@@ -3,7 +3,7 @@ import { colors } from "../../constants";
 
 export const styles = StyleSheet.create({
   container: {
-    marginVertical: 20,
+    alignItems: "center",
   },
   preview: {
     width: "100%",
@@ -11,11 +11,29 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: colors.secondary,
+    borderColor: colors.white,
     borderWidth: 1,
   },
   containerActions: {
     flexDirection: "row",
     justifyContent: "space-around",
+  },
+  btnContent: {
+    marginBottom: 10,
+    flexDirection: "column",
+    gap: 2,
+    width: 500,
+  },
+  btn: {
+    backgroundColor: colors.primary,
+    width: "50%",
+    padding: 5,
+    alignSelf: "center",
+    alignItems: "center",
+  },
+  btnText: {
+    color: colors.white,
+    fontFamily: "Neuton-Regular",
+    fontSize: 20,
   },
 });

@@ -17,9 +17,10 @@ export const signUp = (email, password) => {
           returnSecureToken: true,
         }),
       });
-      // if (!response.ok) {
-      //   throw new Error("Something went wrong");
-      // }
+      if (!response.ok) {
+        return;
+        // throw new Error("Something went wrong");
+      }
 
       const data = await response.json();
 
@@ -70,7 +71,7 @@ export const logOut = () => {
     try {
       dispatch({
         type: LOG_OUT,
-        toke: null,
+        token: null,
         userId: null,
       });
     } catch (error) {

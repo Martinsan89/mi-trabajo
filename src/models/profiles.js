@@ -1,4 +1,4 @@
-class Place {
+class Profile {
   constructor(id, title, image, address, coords) {
     this.id = id;
     this.title = title;
@@ -8,4 +8,4 @@ class Place {
   }
 }
 
-export default Place;
+export default Profile;

@@ -7,7 +7,8 @@ import {
   chatsReducer,
   registerReducer,
 } from "./reducers";
-import placeReducer from "../store/slice/place.slice";
+
+import profileReducer from "../store/slice/profile.slice.js";
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -15,7 +16,7 @@ const rootReducer = combineReducers({
   inbox: inboxReducer,
   chats: chatsReducer,
   register: registerReducer,
-  place: placeReducer,
+  profile: profileReducer,
 });
 
 export default createStore(rootReducer, applyMiddleware(thunk));

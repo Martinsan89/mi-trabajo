@@ -25,7 +25,6 @@ export const styles = StyleSheet.create({
   headerContainer: {},
   date: {
     fontSize: 16,
-    // fontFamily: "Bitter-Regular",
     color: colors.text,
   },
   contentContainer: {
@@ -38,6 +37,5 @@ export const styles = StyleSheet.create({
   content: {},
   total: {
     fontSize: 16,
-    // fontFamily: "Bitter-Bold",
   },
 });
